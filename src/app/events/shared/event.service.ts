@@ -4,13 +4,17 @@ import { Injectable } from '@angular/core';
 //if you use providedIn, the injectable is registered as a provider of the Module without adding it to the providers of the module.
 @Injectable({
   providedIn: 'root'
-}) 
+})
 
 
 export class EventService {
 	getEvents() {
 		return EVENTS;
 	}
+
+  getEvent(id:number) {
+    return EVENTS.find(event => event.id === id);
+  }
   constructor() { }
 }
 const EVENTS = [
