@@ -29,11 +29,11 @@ const routes: Routes = [
   {
   	path: '404',
   	component: Error404Component
-  }/*,
+  },
   {
   	path: 'user',
   	loadChildren: './user/user.module#UserModule'
-  }*/
+  }
 ];
 
 @NgModule({
