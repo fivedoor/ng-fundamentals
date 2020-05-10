@@ -12,7 +12,7 @@ export class EventService {
 	  getEvents() {
     let subject = new Subject() // type of observable
     setTimeout(() => {subject.next(EVENTS); subject.complete(); },
-      800); // adding timeout simulates time taken for data to load
+      800); // adding timeout simulates time taken for data to load 
     return subject;
   }
 
