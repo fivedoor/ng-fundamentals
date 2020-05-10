@@ -11,7 +11,7 @@ const routes: Routes = [
  {
   	path: 'events/new',
   	component: CreateEventComponent,
-  	canDeactivate: ['canDeactivateCreateEvent'] // this in quotes cos it's a function not a service
+  	canDeactivate: ['canDeactivateCreateEvent'] // this in quotes cos it's a function not a service which we reference in the app module
   },
    { path: '', redirectTo: '/events',
     pathMatch: 'full'

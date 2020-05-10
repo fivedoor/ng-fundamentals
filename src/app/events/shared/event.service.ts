@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs'
 
 // https://stackoverflow.com/questions/50848357/what-is-the-purpose-of-providedin-with-the-injectable-decorator-when-generating
 //if you use providedIn, the injectable is registered as a provider of the Module without adding it to the providers of the module.
@@ -8,9 +9,12 @@ import { Injectable } from '@angular/core';
 
 
 export class EventService {
-	getEvents() {
-		return EVENTS;
-	}
+	  getEvents() {
+    let subject = new Subject() // type of observable
+    setTimeout(() => {subject.next(EVENTS); subject.complete(); },
+      800); // adding timeout simulates time taken for data to load
+    return subject;
+  }
 
   getEvent(id:number) {
     return EVENTS.find(event => event.id === id);
