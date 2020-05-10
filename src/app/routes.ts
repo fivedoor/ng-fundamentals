@@ -10,8 +10,8 @@ import { EventListResolver } from './events/events-list-resolver.service'*/
 const routes: Routes = [
  {
   	path: 'events/new',
-  	component: CreateEventComponent/*,
-  	canDeactivate: ['canDeactivateCreateEvent'] */
+  	component: CreateEventComponent,
+  	canDeactivate: ['canDeactivateCreateEvent'] // this in quotes cos it's a function not a service
   },
    { path: '', redirectTo: '/events',
     pathMatch: 'full'
